@@ -1,0 +1,25 @@
+!SESSION 2026-01-09 14:50:33.567 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-01-09 14:51:00.696
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-01-09 14:51:00.696
+!MESSAGE Log4j2 initialized with config file /home/valwe/Desktop/stm32WordRecognition/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-01-09 14:51:03.165
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 2 2 2026-01-09 15:19:08.791
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2026-01-09 15:19:08.791
+!MESSAGE The project description file (.project) for 'embedded' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.core.resources 2 2 2026-01-09 15:43:29.337
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2026-01-09 15:43:29.337
+!MESSAGE The project description file (.project) for 'embedded' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
