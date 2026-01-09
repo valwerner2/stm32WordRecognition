@@ -1053,3 +1053,12 @@ java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()"
 2026-01-09 15:38:47,649 [INFO] CADModel:114 - Register for checkConnection events
 2026-01-09 15:38:47,686 [INFO] OpenFileManager:386 - Restore cursor
 2026-01-09 15:38:47,802 [WARN] IP:2250 - LayerIdx_L1 not found: check if there is a RefParameter without a condition.
+2026-01-09 16:33:25,722 [WARN] IP:2250 - LayerIdx_L1 not found: check if there is a RefParameter without a condition.
+2026-01-09 16:33:57,515 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x241,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2026-01-09 16:39:42,191 [WARN] IP:2250 - LayerIdx_L1 not found: check if there is a RefParameter without a condition.
+2026-01-09 16:45:48,376 [WARN] IP:2250 - LayerIdx_L1 not found: check if there is a RefParameter without a condition.
+2026-01-09 16:46:03,126 [WARN] IP:2250 - LayerIdx_L1 not found: check if there is a RefParameter without a condition.
+2026-01-09 16:47:27,324 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2026-01-09 16:47:32,872 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2026-01-09 16:47:34,604 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 487133520 Bytes (643825664)
+2026-01-09 19:36:31,897 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

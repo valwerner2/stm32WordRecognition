@@ -23,3 +23,9 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 !MESSAGE Save operation warnings.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2026-01-09 15:43:29.337
 !MESSAGE The project description file (.project) for 'embedded' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY com.st.stm32cube.ide.common.services 4 0 2026-01-09 19:33:17.780
+!MESSAGE Not able to get any active project build configuration.
+
+!ENTRY com.st.stm32cube.ide.common.services 4 0 2026-01-09 19:34:58.992
+!MESSAGE Not able to get any active project build configuration.

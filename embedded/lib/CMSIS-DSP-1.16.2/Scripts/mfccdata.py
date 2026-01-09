@@ -173,7 +173,7 @@ def prepareWindowConfig(configs):
     for config in configs:
         c=configs[config] 
         if c["win"] == "hamming":
-           win = sig.hamming(c["fftlength"], sym=False) 
+           win = sig.windows.hamming(c["fftlength"], sym=False)
         if c["win"] == "hanning":
            win = sig.hann(c["fftlength"], sym=False) 
 

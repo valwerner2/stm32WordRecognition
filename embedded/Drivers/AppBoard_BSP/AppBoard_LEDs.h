@@ -5,7 +5,7 @@
 #ifndef ES2V1_APPBOARDLEDS_H
 #define ES2V1_APPBOARDLEDS_H
 
-#include "../../Core/Inc/main.h"
+#include "main.h"
 
 #define APPBOARD_NUMBER_LEDS 8U
 #define APPBOARD_LED1 (1U << 0U)

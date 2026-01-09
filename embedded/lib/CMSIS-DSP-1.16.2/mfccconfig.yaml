@@ -1,0 +1,20 @@
+dct:
+  dct_embedded_f32:
+    melFilters: 40
+    dctOutputs: 13
+    type: "f32"
+  
+melfilter:
+  mel_embedded_f32:
+    fftlength: 1024 
+    fmin: 64 
+    fmax: 8000 
+    samplingRate : 16000 
+    melFilters: 40
+    type: "f32"
+
+window:
+  window_embedded_f32:
+    fftlength: 1024 
+    type: "f32"  
+    win: "hamming"

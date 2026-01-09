@@ -23,248 +23,275 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9b0ce62-bf43-42d6-a315-b7aff2b03575" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_ADC.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_ADC.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_Buttons.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_Buttons.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_EEPROM24LC64.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_EEPROM24LC65.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_LEDs.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_LEDs.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/accelero.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/audio.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/camera.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/epd.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/gyro.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/idd.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/io.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/lcd.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/magneto.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/ts.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/tsensor.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire480272/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire480272/ampire480272.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire640480/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire640480/ampire640480.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/cs43l22/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/cs43l22/cs43l22.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/cs43l22/cs43l22.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/exc7200/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/exc7200/exc7200.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/exc7200/exc7200.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ft6x06/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ft6x06/ft6x06.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ft6x06/ft6x06.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9325/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9325/ili9325.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9325/ili9325.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9341/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9341/ili9341.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9341/ili9341.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/l3gd20/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/l3gd20/l3gd20.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/l3gd20/l3gd20.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis302dl/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis302dl/lis302dl.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis302dl/lis302dl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis3dsh/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis3dsh/lis3dsh.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis3dsh/lis3dsh.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ls016b8uy/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ls016b8uy/ls016b8uy.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ls016b8uy/ls016b8uy.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lsm303dlhc/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lsm303dlhc/lsm303dlhc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lsm303dlhc/lsm303dlhc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/mfxstm32l152/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/mfxstm32l152/mfxstm32l152.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/mfxstm32l152/mfxstm32l152.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q128a/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q128a/n25q128a.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q256a/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q256a/n25q256a.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q512a/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q512a/n25q512a.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/otm8009a/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/otm8009a/otm8009a.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/otm8009a/otm8009a.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov2640/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov2640/ov2640.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov2640/ov2640.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/Release_Notes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/_htmresc/mini-st.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/_htmresc/st_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/ov5640.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/ov5640.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s25fl512s/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s25fl512s/s25fl512s.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s5k5cag/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s5k5cag/s5k5cag.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s5k5cag/s5k5cag.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7735/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7735/st7735.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7735/st7735.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7789h2/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7789h2/st7789h2.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7789h2/st7789h2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe1600/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe1600/stmpe1600.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe1600/stmpe1600.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe811/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe811/stmpe811.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe811/stmpe811.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ts3510/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ts3510/ts3510.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ts3510/ts3510.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/wm8994/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/wm8994/wm8994.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/wm8994/wm8994.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/Release_Notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/STM32F429I-Discovery_BSP_User_Manual.chm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cachel1_armv7.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_armcc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_armclang.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_armclang_ltm.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_compiler.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_gcc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_iccarm.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_version.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_armv81mml.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_armv8mbl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_armv8mml.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm0.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm0plus.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm23.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm3.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm33.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm35p.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm4.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm55.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm7.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm85.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_sc000.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_sc300.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_starmc1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/mpu_armv7.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/mpu_armv8.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/pac_armv81.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/pmu_armv8.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/tz_context.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/CMSIS/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_crc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma2d.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/embedded.ioc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" />
+    <list default="true" id="d9b0ce62-bf43-42d6-a315-b7aff2b03575" name="Changes" comment="cubeMX + platformio init">
+      <change afterPath="$PROJECT_DIR$/Inc/Application.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/mfccdata.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Application.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/mfccdata.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/mfccconfig.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wavToC/script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.ide.log" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.ide.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.cdt.core/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.cdt.core/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/embedded/.markers.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/embedded/.syncinfo.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/embedded/1.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/0.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_ADC.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_ADC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_Buttons.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_Buttons.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_EEPROM24LC64.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_EEPROM24LC65.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_LEDs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/AppBoard_BSP/AppBoard_LEDs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/accelero.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/audio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/camera.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/epd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/gyro.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/idd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/io.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/lcd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/magneto.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/ts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/Common/tsensor.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire480272/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire480272/ampire480272.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire640480/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ampire640480/ampire640480.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/cs43l22/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/cs43l22/cs43l22.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/cs43l22/cs43l22.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/exc7200/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/exc7200/exc7200.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/exc7200/exc7200.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ft6x06/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ft6x06/ft6x06.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ft6x06/ft6x06.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9325/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9325/ili9325.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9325/ili9325.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9341/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9341/ili9341.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ili9341/ili9341.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/l3gd20/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/l3gd20/l3gd20.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/l3gd20/l3gd20.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis302dl/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis302dl/lis302dl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis302dl/lis302dl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis3dsh/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis3dsh/lis3dsh.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lis3dsh/lis3dsh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ls016b8uy/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ls016b8uy/ls016b8uy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ls016b8uy/ls016b8uy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lsm303dlhc/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lsm303dlhc/lsm303dlhc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/lsm303dlhc/lsm303dlhc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/mfxstm32l152/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/mfxstm32l152/mfxstm32l152.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/mfxstm32l152/mfxstm32l152.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q128a/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q128a/n25q128a.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q256a/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q256a/n25q256a.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q512a/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/n25q512a/n25q512a.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/otm8009a/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/otm8009a/otm8009a.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/otm8009a/otm8009a.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov2640/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov2640/ov2640.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov2640/ov2640.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/Release_Notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/_htmresc/mini-st.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/_htmresc/st_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/ov5640.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ov5640/ov5640.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s25fl512s/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s25fl512s/s25fl512s.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s5k5cag/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s5k5cag/s5k5cag.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/s5k5cag/s5k5cag.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7735/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7735/st7735.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7735/st7735.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7789h2/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7789h2/st7789h2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/st7789h2/st7789h2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe1600/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe1600/stmpe1600.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe1600/stmpe1600.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe811/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe811/stmpe811.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/stmpe811/stmpe811.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ts3510/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ts3510/ts3510.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/ts3510/ts3510.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/wm8994/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/wm8994/wm8994.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/Components/wm8994/wm8994.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/Release_Notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/STM32F429I-Discovery_BSP_User_Manual.chm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Device/ST/STM32F4xx/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cachel1_armv7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_armcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_armclang.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_armclang_ltm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_compiler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_gcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_iccarm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/cmsis_version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_armv81mml.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_armv8mbl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_armv8mml.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm0.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm0plus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm23.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm33.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm35p.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm55.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_cm85.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_sc000.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_sc300.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/core_starmc1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/mpu_armv7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/mpu_armv8.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/pac_armv81.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/pmu_armv8.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/Include/tz_context.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/CMSIS/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_crc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma2d.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/stm32f4xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/stm32f4xx_it.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedded.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/embedded.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Scripts/mfccdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Scripts/mfccdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Include/Tests/mfccdata.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Include/Tests/mfccdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Include/Tests/mfccdata.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Source/Tests/mfccdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Source/Tests/mfccdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stm32pio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/stm32pio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prototype/proto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../prototype/proto.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,6 +300,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="EmbeddedSvdWindowState">
+    <option name="loadedFiles">
+      <list>
+        <option value="$USER_HOME$/.platformio/platforms/ststm32/misc/svd/STM32F429x.svd" />
+      </list>
+    </option>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="disco_f429zi" />
   <component name="ExternalProjectsData">
@@ -295,6 +329,48 @@
     &quot;accountId&quot;: &quot;5952fed2-d43a-4a58-8be7-b0b31be670c6&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="PlatformioLocalSettings">
     <option name="availableProjects">
       <map>
@@ -360,9 +436,15 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Inc" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Src" />
       <recent name="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Inc" />
+      <recent name="$PROJECT_DIR$/Src" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -383,11 +465,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1767966991828</updated>
-      <workItem from="1767966993582" duration="2851000" />
+      <workItem from="1767966993582" duration="16486000" />
     </task>
+    <task id="LOCAL-00001" summary="cubeMX + platformio init">
+      <option name="closed" value="true" />
+      <created>1767969894470</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1767969894470</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cubeMX + platformio init">
+      <option name="closed" value="true" />
+      <created>1767969921718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767969921718</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cubeMX + platformio init" />
+    <option name="LAST_COMMIT_MESSAGE" value="cubeMX + platformio init" />
   </component>
 </project>
