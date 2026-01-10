@@ -9,14 +9,14 @@ typedef enum word{
   WORD_START = 0,
   WORD_STOP,
   WORD_MINUS,
-  WORD_PLUS
+  WORD_PLUS,
+  WORD_NOISE
 }word_t;
 
 typedef struct{
   int rows;
-  int cols;
   word_t word;
-  float *data[];
+  const float *data;
 
 }mfcc_t;
 
@@ -148,6 +148,12 @@ const float mfcc_noice[14][13] = {
   {-5.140714f, -3.778808f, 0.411498f, -0.401439f, 0.179602f, 0.171440f, 0.331672f, 0.212156f, 0.214165f, 0.522864f, 0.322053f, 0.081044f, -0.064730f},
   {-5.304711f, -4.185798f, 0.141040f, -0.054634f, 0.198947f, -0.207366f, 0.151049f, -0.302939f, -0.205234f, 0.037120f, 0.096354f, 0.400540f, 0.111066f},
   {-4.418475f, -3.491427f, 0.333257f, -0.246146f, 0.120236f, 0.242866f, 0.113947f, 0.192058f, 0.066171f, -0.021799f, 0.746655f, 0.229378f, 0.531306f}
+};
+
+mfcc_t mfccNoiseFlat = {
+  .rows = 14,
+  .word = WORD_NOISE,
+  .data = (float*)mfcc_noice
 };
 
 #endif //MFCC_TABELS_H

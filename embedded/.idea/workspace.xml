@@ -23,19 +23,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="testin cosine dist instead of dtw: no luck">
-      <change afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="code to get wav files from board and preprocessed said files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.c" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/minusJ.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/plusJ.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/startJ.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/stopJ.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Application.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prototype/proto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../prototype/proto.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wavToC/script.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +184,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
-      <workItem from="1768033792589" duration="14700000" />
+      <workItem from="1768033792589" duration="20436000" />
     </task>
     <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
       <option name="closed" value="true" />
@@ -201,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768043904439</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="code to get wav files from board and preprocessed said files">
+      <option name="closed" value="true" />
+      <created>1768057129905</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1768057129905</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +210,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testin cosine dist instead of dtw: no luck" />
-    <option name="LAST_COMMIT_MESSAGE" value="testin cosine dist instead of dtw: no luck" />
+    <MESSAGE value="code to get wav files from board and preprocessed said files" />
+    <option name="LAST_COMMIT_MESSAGE" value="code to get wav files from board and preprocessed said files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

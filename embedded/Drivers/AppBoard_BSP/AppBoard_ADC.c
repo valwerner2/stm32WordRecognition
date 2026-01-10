@@ -42,3 +42,13 @@ int16_t s16AppBoard_ADC_ReadMicro(void)
 
 	return pcm_value;
 }
+float f32AppBoard_ADC_ReadMicro(void)
+{
+	uint32_t adc_value = readADC(&hadc1);
+
+	if (adc_value > 4095) adc_value = 4095;
+
+	float pcm_float = ((float)adc_value - 2048.0f) / 2048.0f;
+
+	return pcm_float;
+}
