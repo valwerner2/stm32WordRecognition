@@ -31,7 +31,14 @@ f32_t f32AppBoard_ADC_ReadTempCelsius(void)
 {
 	return 25.f + (u32AppBoard_ADC_ReadTemp() / 4096.f * 3.f - 0.75f ) / 0.01f;
 }
-uint32_t u32AppBoard_ADC_ReadMicro(void)
+int16_t s16AppBoard_ADC_ReadMicro(void)
 {
-	return readADC(&hadc1);
+	uint32_t adc_value = readADC(&hadc1);
+	if (adc_value > 4095) adc_value = 4095;
+
+	uint32_t scaled_value = adc_value << 4;
+
+	int16_t pcm_value = (int16_t)((int32_t)scaled_value - 32768);
+
+	return pcm_value;
 }

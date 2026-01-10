@@ -23,15 +23,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="">
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="testin cosine dist instead of dtw: no luck">
+      <change afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/minusJ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/minusJ.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/plusJ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/plusJ.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/startJ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/startJ.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/stopJ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stopJ.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.c" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/AppBoard_BSP/AppBoard_ADC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/minusJ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/plusJ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/startJ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/stopJ.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Application.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stm32pio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/stm32pio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prototype/proto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../prototype/proto.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wavToC/script.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +44,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="EmbeddedSvdWindowState">
+    <option name="loadedFiles">
+      <list>
+        <option value="$USER_HOME$/.platformio/platforms/ststm32/misc/svd/STM32F429x.svd" />
+      </list>
+    </option>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="disco_f429zi" />
   <component name="ExternalProjectsData">
@@ -62,6 +73,46 @@
     "accountId": "5952fed2-d43a-4a58-8be7-b0b31be670c6"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="PlatformioLocalSettings">
     <option name="availableProjects">
       <map>
@@ -105,6 +156,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "PlatformIO.PlatformIO.executor": "Run",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -139,11 +191,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
-      <workItem from="1768033792589" duration="2846000" />
+      <workItem from="1768033792589" duration="14700000" />
     </task>
+    <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
+      <option name="closed" value="true" />
+      <created>1768043904438</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1768043904439</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="testin cosine dist instead of dtw: no luck" />
+    <option name="LAST_COMMIT_MESSAGE" value="testin cosine dist instead of dtw: no luck" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Src/stm32f4xx_it.c</url>
+          <line>94</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
