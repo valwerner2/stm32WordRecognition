@@ -51,7 +51,7 @@ int calc_spectrum_len(unsigned int lengthWav) {
     return floor(lengthWav / HOP_LEN) - 1;
 }
 
-void process_frame(float *frameMfccOutput, float *frameWave) {
+void process_frame(float *frameMfccOutput, const float *frameWave) {
     float inputSignal[MFCC_FFT_LEN];
 
     arm_copy_f32(frameWave, inputSignal, MFCC_FFT_LEN);
@@ -64,7 +64,7 @@ void process_frame(float *frameMfccOutput, float *frameWave) {
     );
 }
 
-void preprocess_wave(unsigned int length_wav, float *wave) {
+void preprocess_wave(unsigned int length_wav, const float *wave) {
     int mfcc_len = calc_spectrum_len(length_wav);
     float mfccOutput[mfcc_len][NUM_DCT_OUTPUTS];
 
