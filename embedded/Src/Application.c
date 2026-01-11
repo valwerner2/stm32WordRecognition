@@ -206,8 +206,8 @@ float compute_speech_dtw(const mfcc_t* mfcc1, const mfcc_t* mfcc2) {
 void process_speech_interval(const int start, const int count) {
     float mfcc_speech_window[count][NUM_DCT_OUTPUTS];
     //empty speech!
-    for(int i = 0; i < NUM_DCT_OUTPUTS; i++) {
-        mfccBuffer[i][0] = noiseFloor - 1.f;
+    for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+        mfccBuffer[i][0] = noiseFloor - 2.f;
     }
 
     int startActual = (mfccWritePos + start) % MFCC_BUFFER_SIZE; // speech map index 0 = mfccWritePos
@@ -231,7 +231,17 @@ void process_speech_interval(const int start, const int count) {
             mfcc_curr.word = mfccComparison[i].word;
         }
     }
-    printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
+    static word_t wordLast = WORD_START;
+    if(currentLowestDist < 0.07f) {
+        printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
+        vAppBoard_LEDs_LEDOff(4 + wordLast);
+        vAppBoard_LEDs_LEDOn(4 + mfcc_curr.word);
+        wordLast = mfcc_curr.word;
+    }else {
+        printf("Current lowest distance: %f - nothing found\n", currentLowestDist);
+        vAppBoard_LEDs_LEDOff(4 + wordLast);
+    }
+
 }
 
 char mfcc_find_speech_interval(
