@@ -29,6 +29,7 @@
 #include <stdio.h>
 
 #define MAX_POS_WAVE  16000
+#define MFCC_BUFFER_SIZE 16
 
 float samples[MFCC_FFT_LEN];
 
@@ -39,7 +40,7 @@ arm_mfcc_instance_f32 mfccInstance;
 float mfccTmp[MFCC_FFT_LEN + 2];
 float noiseFloor = 0.0f;
 
-
+const int speechCountThreshold = 5;
 
 int _write(int file, char *ptr, int len) {
     HAL_UART_Transmit(&huart1, (uint8_t *)ptr, len, HAL_MAX_DELAY);
@@ -134,13 +135,15 @@ void process_frame(float *frameMfccOutput, const float *frameWave) {
     float inputSignal[MFCC_FFT_LEN];
 
     arm_copy_f32(frameWave, inputSignal, MFCC_FFT_LEN);
-
+    vAppBoard_LEDs_LEDOn(2);
     arm_mfcc_f32(
         &mfccInstance,
         inputSignal,
         frameMfccOutput,
         mfccTmp
     );
+
+    vAppBoard_LEDs_LEDOff(2);
 }
 
 void preprocess_wave(unsigned int length_wav, const float *wave, char* waveName) {
@@ -168,26 +171,8 @@ void mfcc_setup(void) {
     );
 
     if (status != ARM_MATH_SUCCESS) {
-        vAppBoard_LEDs_LEDOn(7);
+        vAppBoard_LEDs_LEDOn(8);
     }
-}
-
-void init_noise_floor(void) {
-    for (int i = 0; i < mfccNoiseFlat.rows; i++) {
-        noiseFloor += mfccNoiseFlat.data[i * NUM_DCT_OUTPUTS];
-    }
-    const float mean = noiseFloor / (float)mfccNoiseFlat.rows;
-
-    float sumSQRT = 0.0f;
-    for (size_t i = 0; i < mfccNoiseFlat.rows; i++) {
-        float diff = mfccNoiseFlat.data[i * NUM_DCT_OUTPUTS] - mean;
-        sumSQRT += diff * diff;
-    }
-
-    const float stdDiff = sqrtf(sumSQRT / (float)(mfccNoiseFlat.rows - 1));
-
-    noiseFloor = mean + stdDiff * 3;
-    printf("Noise floor = %f - (mean: %f, std_diff: %f)\n", noiseFloor, mean, stdDiff);
 }
 
 char samplesReady = 0;
@@ -196,13 +181,13 @@ unsigned int samplesWritePos = 0;
 void samples_timer_handler(void) {
     static char firstFillUp = 1;
     static int amountReady = 0;
+    static int skippedSamples = 0;
 
     // fill up buffer when first started
     if (firstFillUp) {
         if(samplesWritePos < MFCC_FFT_LEN) {
             samples[samplesWritePos] = f32AppBoard_ADC_ReadMicro();
             samplesWritePos++;
-
         }else{
             samplesWritePos = 0;
             samplesReady = 1;
@@ -213,51 +198,171 @@ void samples_timer_handler(void) {
 
     // exec mfcc code copied what it needed
     if (!samplesReady) {
+        //if(skippedSamples) {printf("skippedSamples: %d\n", skippedSamples); skippedSamples = 0;}
         samples[samplesWritePos] = f32AppBoard_ADC_ReadMicro();
-        samplesWritePos = (samplesWritePos + 1 ) % MFCC_FFT_LEN;
+        samplesWritePos = (samplesWritePos + 1) % MFCC_FFT_LEN;
         amountReady++;
 
         if (amountReady == HOP_LEN) {
             samplesReady = 1;
             amountReady = 0;
         }
+    }else {
+        skippedSamples++;
     }
 }
 
-void samples_processor_loop(void) {
+float mfccBuffer[MFCC_BUFFER_SIZE][NUM_DCT_OUTPUTS];
+int mfccWritePos = 0;
+
+void init_noise_floor(void) {
+    for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+        noiseFloor += mfccBuffer[i][0];
+    }
+    const float mean = noiseFloor / (float)MFCC_BUFFER_SIZE;
+
+    float sumSQRT = 0.0f;
+    for (size_t i = 0; i < MFCC_BUFFER_SIZE; i++) {
+        const float diff = mfccBuffer[i][0] - mean;
+        sumSQRT += diff * diff;
+    }
+
+    const float stdDiff = sqrtf(sumSQRT / (float)(MFCC_BUFFER_SIZE- 1));
+
+    noiseFloor = mean + stdDiff * 4;
+    printf("Noise floor = %f - (mean: %f, std_diff: %f)\n", noiseFloor, mean, stdDiff);
+}
+
+void process_speech_interval(const int start, const int count) {
+    float mfcc_speech_window[count][NUM_DCT_OUTPUTS - 1]; // first index is ignored (loudness)
+
+    int startActual = (mfccWritePos + start) % MFCC_BUFFER_SIZE; // speech map index 0 = mfccWritePos
+
+    for(int i = 0; i < count; i++) {
+        arm_copy_f32(&mfccBuffer[startActual][1], mfcc_speech_window[i], NUM_DCT_OUTPUTS - 1);
+        startActual = (startActual + 1) % MFCC_BUFFER_SIZE;
+    }
+}
+
+void mfcc_find_speech_interval(void) {
+
+    // get speech
+    char speechMap[MFCC_BUFFER_SIZE];
+
+    // copy
+    int mfccReadPos = mfccWritePos;
+    for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+        speechMap[i] = mfccBuffer[mfccReadPos][0] >= noiseFloor;
+        mfccReadPos = (mfccReadPos+1) % MFCC_BUFFER_SIZE;
+    }
+
+    //unchanged buffer
+    for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+        printf("%d", (int)speechMap[i]);
+    }
+
+    for(int i = 2; i < MFCC_BUFFER_SIZE; i++) {
+        if (speechMap[i] && speechMap[i - 2]) {
+            speechMap[i-1] = 1;
+        }
+    }
+    printf(" - ");
+    for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+        printf("%d", (int)speechMap[i]);
+    }
+
+
+    //find longest valid match
+    int startIndex = -1;
+    for (int i = 1; startIndex == -1 && i < MFCC_BUFFER_SIZE; i++) {
+        if (speechMap[i] && !speechMap[i - 1]) {
+            startIndex = i;
+        }
+    }
+    int stopIndex = -1;
+    for(int i = startIndex + 1; stopIndex == -1 && i < MFCC_BUFFER_SIZE; i++) {
+        if(!speechMap[i]) {
+            stopIndex = i;
+        }
+    }
+    if( stopIndex != -1 && startIndex != -1 && stopIndex - startIndex >= speechCountThreshold) {
+        printf(" %d - %d | %d", startIndex, stopIndex, stopIndex - startIndex);
+        //empty speech!
+        for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+            mfccBuffer[i][0] = noiseFloor - 1.f;
+        }
+        process_speech_interval(startIndex, stopIndex - startIndex);
+    }
+
+
+    printf("\n");
+}
+
+void sample_processor_loop(void) {
+    static char firstFillUp = 1;
+
     if(samplesReady) {
         float samples_mfcc[MFCC_FFT_LEN];
-
+        char copied = 0;
         // writer at start of array
         if(samplesWritePos == 0) {
             arm_copy_f32(samples, samples_mfcc, MFCC_FFT_LEN);
             samplesReady = 0;
-            vAppBoard_LEDs_LEDOn(3);
-            vAppBoard_LEDs_LEDOff(4);
-            return;
+            vAppBoard_LEDs_LEDOn(1);
+            copied = 1;
         }
 
         // writer at middle of array
-        if(samplesWritePos == HOP_LEN) {
+        else if(samplesWritePos == HOP_LEN) {
             arm_copy_f32(samples, samples_mfcc + HOP_LEN - 1, HOP_LEN);
             arm_copy_f32(samples + HOP_LEN - 1, samples_mfcc, HOP_LEN);
             samplesReady = 0;
-            vAppBoard_LEDs_LEDOn(4);
-            vAppBoard_LEDs_LEDOff(3);
+            vAppBoard_LEDs_LEDOff(1);
+            copied = 1;
+        }
+
+        if (!copied) {
+            vAppBoard_LEDs_LEDOn(8);
+            printf("samples_processor_loop: this shall not happen, pos: %d\n", samplesWritePos);
             return;
         }
-        vAppBoard_LEDs_LEDOn(5);
-        printf("samples_processor_loop: this shall not happen, pos: %d\n", samplesWritePos);
+
+        //process copied
+        process_frame(mfccBuffer[mfccWritePos], samples_mfcc);
+        mfccWritePos = (mfccWritePos + 1) % MFCC_BUFFER_SIZE;
+
+
+        if(!firstFillUp) {
+            static int countSpeechDetected = 0;
+            int countSpeech = 0;
+            for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
+                if(mfccBuffer[i][0] >= noiseFloor) {
+                    countSpeech++;
+                }
+            }
+            if(countSpeech >= speechCountThreshold) {
+                vAppBoard_LEDs_LEDOn(3);
+                countSpeechDetected++;
+            }
+            else {
+                vAppBoard_LEDs_LEDOff(3);
+            }
+            mfcc_find_speech_interval();
+        } else if(mfccWritePos == 0 && firstFillUp) {
+            init_noise_floor();
+            firstFillUp = 0;
+        }
     }
 }
 
+
+
 void Application_Loop(void) {
-    samples_processor_loop();
+    sample_processor_loop();
 }
 
 void Application_Init(void){
     mfcc_setup();
-    init_noise_floor();
     HAL_TIM_Base_Start_IT(&htim2);
 
     while(1) {
@@ -293,5 +398,4 @@ void Application_Timer2_Handler(void){
     }
 
     if(makeWave) {Application_Make_Wave(&makeWave);}
-    vAppBoard_LEDs_LEDOn(1);
 }
