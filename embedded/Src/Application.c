@@ -286,60 +286,73 @@ void process_speech_interval(const int start, const int count) {
     printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
 }
 
-void mfcc_find_speech_interval(void) {
-
-    // get speech
-    char speechMap[MFCC_BUFFER_SIZE];
+void mfcc_find_speech_interval(
+    int mfccReadPos,
+    const int speechMapLength,
+    float mfccToProcess[speechMapLength][NUM_DCT_OUTPUTS],
+    const char shallPrint,
+    int *startInterval,
+    int *endInterval) {
 
     // copy
-    int mfccReadPos = mfccWritePos;
-    for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-        speechMap[i] = mfccBuffer[mfccReadPos][0] >= noiseFloor;
-        mfccReadPos = (mfccReadPos+1) % MFCC_BUFFER_SIZE;
+    char speechMap[speechMapLength];
+    for(int i = 0; i < speechMapLength; i++) {
+        speechMap[i] = mfccToProcess[mfccReadPos][0] >= noiseFloor;
+        mfccReadPos = (mfccReadPos+1) % speechMapLength;
     }
 
-    //unchanged buffer
-    for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-        //printf("%d", (int)speechMap[i]);
+    if(shallPrint) {
+        //unchanged buffer
+        for (int i = 0; i < speechMapLength; i++) {
+            printf("%d", (int)speechMap[i]);
+        }
     }
 
-    for(int i = 2; i < MFCC_BUFFER_SIZE; i++) {
+    // fill gaps
+    for(int i = 2; i < speechMapLength; i++) {
         if (speechMap[i] && speechMap[i - 2]) {
             speechMap[i-1] = 1;
         }
     }
-    //printf(" - ");
-    for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-        //printf("%d", (int)speechMap[i]);
+    if(shallPrint) {
+        printf(" - ");
+        //changed buffer
+        for (int i = 0; i < speechMapLength; i++) {
+            printf("%d", (int)speechMap[i]);
+        }
     }
 
-
-    //find longest valid match
-    int startIndex = -1;
-    for (int i = 1; startIndex == -1 && i < MFCC_BUFFER_SIZE; i++) {
+    //find first valid match
+    *startInterval = -1;
+    for (int i = 1; *startInterval == -1 && i < speechMapLength; i++) {
         if (speechMap[i] && !speechMap[i - 1]) {
-            startIndex = i;
+            *startInterval = i;
         }
     }
-    int stopIndex = -1;
-    for(int i = startIndex + 1; stopIndex == -1 && i < MFCC_BUFFER_SIZE; i++) {
+    *endInterval = -1;
+    for(int i = *startInterval + 1; *endInterval == -1 && i < speechMapLength; i++) {
         if(!speechMap[i]) {
-            stopIndex = i;
+            *endInterval = i;
         }
     }
-    if( stopIndex != -1 && startIndex != -1 && stopIndex - startIndex >= speechCountThreshold) {
-        //printf(" %d - %d | %d", startIndex, stopIndex, stopIndex - startIndex);
+
+    int length = *endInterval - *startInterval;
+
+    if(*endInterval != -1 && *startInterval != -1 && length >= speechCountThreshold) {
+        if(shallPrint) {
+            printf(" %d - %d | %d", *startInterval, *endInterval, length);
+        }
         //empty speech!
-        for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-            mfccBuffer[i][0] = noiseFloor - 1.f;
+        for(int i = 0; i < speechMapLength; i++) {
+            mfccToProcess[i][0] = noiseFloor - 1.f;
         }
         vAppBoard_LEDs_LEDOn(3);
-        process_speech_interval(startIndex, stopIndex - startIndex);
         vAppBoard_LEDs_LEDOff(3);
     }
 
-
-    //printf("\n");
+    if(shallPrint) {
+        printf("\n");
+    }
 }
 
 void sample_processor_loop(void) {
@@ -377,7 +390,14 @@ void sample_processor_loop(void) {
 
 
         if(!firstFillUp) {
-            mfcc_find_speech_interval();
+            int startInterval = 0, endInterval = 0;
+            mfcc_find_speech_interval(mfccWritePos,
+                MFCC_BUFFER_SIZE,
+                mfccBuffer,
+                0,
+                &startInterval,
+                &endInterval);
+            process_speech_interval(startInterval, endInterval - startInterval);
         } else if(mfccWritePos == 0 && firstFillUp) {
             init_noise_floor();
             firstFillUp = 0;
