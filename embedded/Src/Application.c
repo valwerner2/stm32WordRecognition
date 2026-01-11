@@ -28,8 +28,8 @@
 #include "mfcc_tabels.h"
 #include <stdio.h>
 
-#define MAX_POS_WAVE  16000
-#define MFCC_BUFFER_SIZE 16
+#define PREPROCESSING_BUFFER_SIZE  16000
+#define MFCC_BUFFER_SIZE 20
 
 float samples[MFCC_FFT_LEN];
 
@@ -45,46 +45,6 @@ const int speechCountThreshold = 5;
 int _write(int file, char *ptr, int len) {
     HAL_UART_Transmit(&huart1, (uint8_t *)ptr, len, HAL_MAX_DELAY);
     return len;
-}
-
-void PrintIntArray(int row, int col, int16_t mfccData[row][col], char* mfccName, char python) {
-
-    char bracketOpen = '{';
-    char bracketClose = '}';
-    if (python) {bracketOpen = '['; bracketClose = ']';}
-
-    if(row > 1) {
-        if(python) {
-            printf("%s = %c\n", mfccName, bracketOpen);
-        }else {
-            printf("%s[%d][%d] = %c\n", mfccName, row, col, bracketOpen);
-        }
-    } else {
-        if(python) {
-            printf("%s = %c\n", mfccName, bracketOpen);
-        }else {
-            printf("%s[%d] = %c\n", mfccName, col, bracketOpen);
-        }
-    }
-
-
-
-    for (int i = 0; i < row; i++) {
-        if(row > 1){printf("  %c", bracketOpen);}
-        for (int j = 0; j < col; j++) {
-            printf("%d", mfccData[i][j]);
-            if (j < col - 1) {
-                printf(", ");
-            }
-        }
-        if(row > 1){printf("%c", bracketClose);}
-
-        if (i < row - 1) {
-            printf(",");
-        }
-        printf("\n");
-    }
-    printf("%c;\n", bracketClose);
 }
 
 void PrintFloatArray(int row, int col, float mfccData[row][col], char* mfccName, char python) {
@@ -127,10 +87,6 @@ void PrintFloatArray(int row, int col, float mfccData[row][col], char* mfccName,
     printf("%c;\n", bracketClose);
 }
 
-int calc_spectrum_len(unsigned int lengthWav) {
-    return floor(lengthWav / HOP_LEN) - 1;
-}
-
 void process_frame(float *frameMfccOutput, const float *frameWave) {
     float inputSignal[MFCC_FFT_LEN];
 
@@ -144,18 +100,6 @@ void process_frame(float *frameMfccOutput, const float *frameWave) {
     );
 
     vAppBoard_LEDs_LEDOff(2);
-}
-
-void preprocess_wave(unsigned int length_wav, const float *wave, char* waveName) {
-    int mfcc_len = calc_spectrum_len(length_wav);
-    float mfccOutput[mfcc_len][NUM_DCT_OUTPUTS];
-
-    for(int currentFrame = 0; currentFrame < mfcc_len; currentFrame++) {
-        process_frame(mfccOutput[currentFrame], wave + HOP_LEN * currentFrame);
-    }
-
-    PrintFloatArray(mfcc_len, NUM_DCT_OUTPUTS, mfccOutput, waveName, 0);
-
 }
 
 void mfcc_setup(void) {
@@ -261,6 +205,10 @@ float compute_speech_dtw(const mfcc_t* mfcc1, const mfcc_t* mfcc2) {
 
 void process_speech_interval(const int start, const int count) {
     float mfcc_speech_window[count][NUM_DCT_OUTPUTS];
+    //empty speech!
+    for(int i = 0; i < NUM_DCT_OUTPUTS; i++) {
+        mfccBuffer[i][0] = noiseFloor - 1.f;
+    }
 
     int startActual = (mfccWritePos + start) % MFCC_BUFFER_SIZE; // speech map index 0 = mfccWritePos
 
@@ -286,7 +234,7 @@ void process_speech_interval(const int start, const int count) {
     printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
 }
 
-void mfcc_find_speech_interval(
+char mfcc_find_speech_interval(
     int mfccReadPos,
     const int speechMapLength,
     float mfccToProcess[speechMapLength][NUM_DCT_OUTPUTS],
@@ -338,21 +286,18 @@ void mfcc_find_speech_interval(
 
     int length = *endInterval - *startInterval;
 
+    char retVal = 0;
     if(*endInterval != -1 && *startInterval != -1 && length >= speechCountThreshold) {
         if(shallPrint) {
             printf(" %d - %d | %d", *startInterval, *endInterval, length);
         }
-        //empty speech!
-        for(int i = 0; i < speechMapLength; i++) {
-            mfccToProcess[i][0] = noiseFloor - 1.f;
-        }
-        vAppBoard_LEDs_LEDOn(3);
-        vAppBoard_LEDs_LEDOff(3);
+        retVal = 1;
     }
 
     if(shallPrint) {
         printf("\n");
     }
+    return retVal;
 }
 
 void sample_processor_loop(void) {
@@ -391,21 +336,24 @@ void sample_processor_loop(void) {
 
         if(!firstFillUp) {
             int startInterval = 0, endInterval = 0;
-            mfcc_find_speech_interval(mfccWritePos,
+            if (mfcc_find_speech_interval(mfccWritePos,
                 MFCC_BUFFER_SIZE,
                 mfccBuffer,
                 0,
                 &startInterval,
-                &endInterval);
-            process_speech_interval(startInterval, endInterval - startInterval);
+                &endInterval)) {
+
+                vAppBoard_LEDs_LEDOn(3);
+                process_speech_interval(startInterval, endInterval - startInterval);
+                vAppBoard_LEDs_LEDOff(3);
+            }
+
         } else if(mfccWritePos == 0 && firstFillUp) {
             init_noise_floor();
             firstFillUp = 0;
         }
     }
 }
-
-
 
 void Application_Loop(void) {
     sample_processor_loop();
@@ -419,33 +367,83 @@ void Application_Init(void){
         Application_Loop();
     }
 }
+char createPreprocessedAudio = 0;
 
-void Application_Make_Wave(char* makeWave) {
+void Application_Preprocess() {
     static int currPos = 0;
-    vAppBoard_LEDs_LEDOn(8);
+    const int framesToSkipp = PREPROCESSING_BUFFER_SIZE / 2;
+    static int framesAlreadySkipped = 0;
 
-    static int16_t wave[1][MAX_POS_WAVE] = {0};
+    // skip to remove the click of the button
+    if(framesAlreadySkipped <= framesToSkipp) {framesAlreadySkipped++; return;}
 
-    if(currPos < MAX_POS_WAVE) {
-        wave[0][currPos] = s16AppBoard_ADC_ReadMicro();
+    //signal start of processing
+    vAppBoard_LEDs_LEDOn(3);
+
+
+    static float rawWave[PREPROCESSING_BUFFER_SIZE];
+
+    if(currPos < PREPROCESSING_BUFFER_SIZE) {
+        rawWave[currPos] = f32AppBoard_ADC_ReadMicro();
         currPos++;
-    }else {
-        currPos = 0;
-        *makeWave = 0;
-        vAppBoard_LEDs_LEDOff(8);
-        PrintIntArray(1, MAX_POS_WAVE, wave, "newWave", 1);
+        return;
+    }
+    //reset local vars
+    framesAlreadySkipped = 0;
+    currPos = 0;
+    createPreprocessedAudio = 0;
+
+    // make MFCCs from wave
+    const int mfcc_len = PREPROCESSING_BUFFER_SIZE / HOP_LEN - 2;
+
+    float mfccOutput[mfcc_len][NUM_DCT_OUTPUTS];
+
+    for(int currentFrame = 0; currentFrame < mfcc_len; currentFrame++) {
+        process_frame(mfccOutput[currentFrame], rawWave + HOP_LEN * currentFrame);
     }
 
+    // check if more than one speech
+    int longestLength = 0;
+    int longestLengthIndex = 0;
+    for(int currentFrame = 0; currentFrame < mfcc_len - speechCountThreshold; currentFrame++) {
+        int startInterval = 0, endInterval = 0;
+        if(mfcc_find_speech_interval(
+            0,
+            mfcc_len - currentFrame,
+            (float(*)[13])&mfccOutput[currentFrame][0],
+            1,
+            &startInterval,
+            &endInterval)) {
+
+            if(longestLength < endInterval - startInterval) {
+                longestLength = endInterval - startInterval;
+                longestLengthIndex = currentFrame + startInterval;
+                currentFrame = endInterval - 1;
+            }
+        }
+    }
+
+    if(longestLength) {
+        printf("longest length: %d @ %d\n", longestLength, longestLengthIndex);
+        PrintFloatArray(longestLength,
+            NUM_DCT_OUTPUTS,
+            mfccOutput[longestLengthIndex], "const float mfcc_XXX", 0);
+    }else {
+        printf("longest length: %d - nothing found!\n", longestLength);
+    }
+
+    vAppBoard_LEDs_LEDOff(3);
 }
 
 void Application_Timer2_Handler(void){
-    samples_timer_handler();
-
-    static char makeWave = 0;
 
     if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_CENTER)) {
-        makeWave = 1;
+        createPreprocessedAudio = 1;
     }
 
-    if(makeWave) {Application_Make_Wave(&makeWave);}
+    if(createPreprocessedAudio) {
+        Application_Preprocess();
+    }else {
+        samples_timer_handler();
+    }
 }
