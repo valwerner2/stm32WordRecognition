@@ -232,16 +232,58 @@ void init_noise_floor(void) {
     noiseFloor = mean + stdDiff * 4;
     printf("Noise floor = %f - (mean: %f, std_diff: %f)\n", noiseFloor, mean, stdDiff);
 }
+float distance_matrix[MFCC_BUFFER_SIZE][MFCC_BUFFER_SIZE];
+float distance_buffer[MFCC_BUFFER_SIZE][MFCC_BUFFER_SIZE];
+
+float compute_speech_dtw(const mfcc_t* mfcc1, const mfcc_t* mfcc2) {
+    const int M = mfcc1->rows;
+    const int N = mfcc2->rows;
+
+    if(M > MFCC_BUFFER_SIZE || N > MFCC_BUFFER_SIZE){vAppBoard_LEDs_LEDOn(8); return MAXFLOAT;}
+    arm_matrix_instance_f32 arm_dist_matrix = {M, N, (float32_t *)distance_matrix};
+    arm_matrix_instance_f32 arm_dist_buffer = {M, N, (float32_t *)distance_buffer};
+
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            float dist = arm_euclidean_distance_f32(
+                                        &mfcc1->data[i*NUM_DCT_OUTPUTS + 1], // ignore first
+                                        &mfcc2->data[j*NUM_DCT_OUTPUTS + 1], // ignore first
+                                        NUM_DCT_OUTPUTS - 1);
+            distance_matrix[i][j] = dist;
+        }
+    }
+
+    float result;
+    arm_dtw_distance_f32(&arm_dist_matrix, 0, &arm_dist_buffer, &result);
+
+    return result / (float)(M + N);
+}
 
 void process_speech_interval(const int start, const int count) {
-    float mfcc_speech_window[count][NUM_DCT_OUTPUTS - 1]; // first index is ignored (loudness)
+    float mfcc_speech_window[count][NUM_DCT_OUTPUTS];
 
     int startActual = (mfccWritePos + start) % MFCC_BUFFER_SIZE; // speech map index 0 = mfccWritePos
 
     for(int i = 0; i < count; i++) {
-        arm_copy_f32(&mfccBuffer[startActual][1], mfcc_speech_window[i], NUM_DCT_OUTPUTS - 1);
+        // first index is ignored (loudness)
+        arm_copy_f32(&mfccBuffer[startActual][1], &mfcc_speech_window[i][1], NUM_DCT_OUTPUTS - 1);
         startActual = (startActual + 1) % MFCC_BUFFER_SIZE;
     }
+
+    mfcc_t mfcc_curr = {
+    .rows = count,
+    .word = WORD_NOISE,
+    .data = (float*)mfcc_speech_window};
+
+    float currentLowestDist = MAXFLOAT;
+    for(int i = 0;i < NUM_MFCC_COMPARISON; i++) {
+        const float currentDist = compute_speech_dtw(&mfccComparison[i], &mfcc_curr);
+        if(currentDist < currentLowestDist) {
+            currentLowestDist = currentDist;
+            mfcc_curr.word = mfccComparison[i].word;
+        }
+    }
+    printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
 }
 
 void mfcc_find_speech_interval(void) {
@@ -258,7 +300,7 @@ void mfcc_find_speech_interval(void) {
 
     //unchanged buffer
     for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-        printf("%d", (int)speechMap[i]);
+        //printf("%d", (int)speechMap[i]);
     }
 
     for(int i = 2; i < MFCC_BUFFER_SIZE; i++) {
@@ -266,9 +308,9 @@ void mfcc_find_speech_interval(void) {
             speechMap[i-1] = 1;
         }
     }
-    printf(" - ");
+    //printf(" - ");
     for (int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-        printf("%d", (int)speechMap[i]);
+        //printf("%d", (int)speechMap[i]);
     }
 
 
@@ -286,16 +328,18 @@ void mfcc_find_speech_interval(void) {
         }
     }
     if( stopIndex != -1 && startIndex != -1 && stopIndex - startIndex >= speechCountThreshold) {
-        printf(" %d - %d | %d", startIndex, stopIndex, stopIndex - startIndex);
+        //printf(" %d - %d | %d", startIndex, stopIndex, stopIndex - startIndex);
         //empty speech!
         for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
             mfccBuffer[i][0] = noiseFloor - 1.f;
         }
+        vAppBoard_LEDs_LEDOn(3);
         process_speech_interval(startIndex, stopIndex - startIndex);
+        vAppBoard_LEDs_LEDOff(3);
     }
 
 
-    printf("\n");
+    //printf("\n");
 }
 
 void sample_processor_loop(void) {
@@ -333,20 +377,6 @@ void sample_processor_loop(void) {
 
 
         if(!firstFillUp) {
-            static int countSpeechDetected = 0;
-            int countSpeech = 0;
-            for(int i = 0; i < MFCC_BUFFER_SIZE; i++) {
-                if(mfccBuffer[i][0] >= noiseFloor) {
-                    countSpeech++;
-                }
-            }
-            if(countSpeech >= speechCountThreshold) {
-                vAppBoard_LEDs_LEDOn(3);
-                countSpeechDetected++;
-            }
-            else {
-                vAppBoard_LEDs_LEDOff(3);
-            }
             mfcc_find_speech_interval();
         } else if(mfccWritePos == 0 && firstFillUp) {
             init_noise_floor();
