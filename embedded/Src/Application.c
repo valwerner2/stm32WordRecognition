@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 #define PREPROCESSING_BUFFER_SIZE  16000
-#define MFCC_BUFFER_SIZE 20
+#define MFCC_BUFFER_SIZE 40
 
 float samples[MFCC_FFT_LEN];
 
@@ -25,7 +25,7 @@ arm_mfcc_instance_f32 mfccInstance;
 float mfccTmp[MFCC_FFT_LEN * 2];
 float noiseFloor = 0.0f;
 
-const int speechCountThreshold = 5;
+const int speechCountThreshold = 15;
 
 int _write(int file, char *ptr, int len) {
     HAL_UART_Transmit(&huart1, (uint8_t *)ptr, len, HAL_MAX_DELAY);
@@ -235,7 +235,7 @@ void process_speech_interval(const int start, const int count) {
         }
     }
     static word_t wordLast = WORD_START;
-    if(currentLowestDist < 0.065f) {
+    if(currentLowestDist < 0.035f) {
         printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
     }else {
         printf("Current lowest distance: %f - nothing found - %d\n", currentLowestDist, mfcc_curr.word);
@@ -274,11 +274,17 @@ char mfcc_find_speech_interval(
     }
 
     // fill gaps
-    for(int i = 2; i < speechMapLength; i++) {
-        if (speechMap[i] && speechMap[i - 2]) {
-            speechMap[i-1] = 1;
+    for(int i = 2; i < speechMapLength /2; i++) {
+        if (speechMap[i-1] && speechMap[i - 2]) {
+            speechMap[i] = 1;
         }
     }
+    for(int i = speechMapLength - 1 - 2; i >= speechMapLength / 2; i--) {
+        if (speechMap[i+1] && speechMap[i + 2]) {
+            speechMap[i] = 1;
+        }
+    }
+
     if(shallPrint) {
         printf(" - ");
         //changed buffer
@@ -379,7 +385,7 @@ char createPreprocessedAudio = 0;
 
 void Application_Timer2_Handler(void){
     //flush out processing buffer
-    if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_UP)) {
+    if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_CENTER)) {
         vAppBoard_LEDs_LEDOn(2);
         PrintFloatArray(mfcc_speech_window_size, NUM_DCT_OUTPUTS, mfcc_speech_window, "const float mfcc_", 0);
         vAppBoard_LEDs_LEDOff(2);
