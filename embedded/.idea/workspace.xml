@@ -23,11 +23,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="lowered the sample rate">
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="better tabels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Application.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/mfccdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/mfccdata.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Application.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prototype/proto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../prototype/proto.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/mfccdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/mfccdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/stm32f4xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/stm32f4xx_it.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedded.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/embedded.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Include/Tests/mfccdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Include/Tests/mfccdata.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Source/Tests/mfccdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/Testing/Source/Tests/mfccdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/mfccconfig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CMSIS-DSP-1.16.2/mfccconfig.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -996,12 +1002,56 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc/mfcc_tabels.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/stm32f4xx_it.c" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PlatformioLocalSettings">
     <option name="availableProjects">
@@ -1085,7 +1135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
       <workItem from="1768033792589" duration="24873000" />
-      <workItem from="1768130727079" duration="36451000" />
+      <workItem from="1768130727079" duration="41921000" />
     </task>
     <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
       <option name="closed" value="true" />
@@ -1175,7 +1225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768215311709</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="better tabels">
+      <option name="closed" value="true" />
+      <created>1768234885940</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1768234885940</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1193,22 +1251,7 @@
     <MESSAGE value="better tables" />
     <MESSAGE value="higher clock speed" />
     <MESSAGE value="lowered the sample rate" />
-    <option name="LAST_COMMIT_MESSAGE" value="lowered the sample rate" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/stm32f4xx_it.c</url>
-          <line>94</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/stm32f4xx_it.c</url>
-          <line>96</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="better tabels" />
+    <option name="LAST_COMMIT_MESSAGE" value="better tabels" />
   </component>
 </project>

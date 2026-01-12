@@ -22,6 +22,9 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <AppBoard_LEDs.h>
+#include <stdio.h>
+
 #include "Application.h"
 /* USER CODE END Includes */
 
@@ -63,7 +66,6 @@ extern HCD_HandleTypeDef hhcd_USB_OTG_HS;
 extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
-
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -90,11 +92,13 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+  printf("HARD FAULT\n");
+  vAppBoard_LEDs_LEDOn(8);
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
 }

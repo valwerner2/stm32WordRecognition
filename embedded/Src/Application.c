@@ -85,16 +85,32 @@ void process_frame(float *frameMfccOutput, const float *frameWave) {
 }
 
 void mfcc_setup(void) {
-    arm_status status = arm_mfcc_init_1024_f32(
-        &mfccInstance,
-        NUM_MELS,
-        NUM_DCT_OUTPUTS,
-        mfcc_dct_coefs_dct_embedded_f32,
-        mfcc_filter_pos_mel_embedded_f32,
-        mfcc_filter_len_mel_embedded_f32,
-        mfcc_filter_coefs_mel_embedded_f32,
-        mfcc_window_coefs_window_embedded_f32
-    );
+    arm_status status = ARM_MATH_ARGUMENT_ERROR;
+    if (MFCC_FFT_LEN == 1024) {
+        status = arm_mfcc_init_1024_f32(
+            &mfccInstance,
+            NUM_MELS,
+            NUM_DCT_OUTPUTS,
+            mfcc_dct_coefs_dct_embedded_f32,
+            mfcc_filter_pos_mel_embedded_f32,
+            mfcc_filter_len_mel_embedded_f32,
+            mfcc_filter_coefs_mel_embedded_f32,
+            mfcc_window_coefs_window_embedded_f32
+        );
+    }
+
+    if (MFCC_FFT_LEN == 512) {
+        status = arm_mfcc_init_512_f32(
+            &mfccInstance,
+            NUM_MELS,
+            NUM_DCT_OUTPUTS,
+            mfcc_dct_coefs_dct_embedded_f32_512,
+            mfcc_filter_pos_mel_embedded_f32_512,
+            mfcc_filter_len_mel_embedded_f32_512,
+            mfcc_filter_coefs_mel_embedded_f32_512,
+            mfcc_window_coefs_window_embedded_f32_512
+        );
+    }
 
     if (status != ARM_MATH_SUCCESS) {
         vAppBoard_LEDs_LEDOn(8);
@@ -351,101 +367,23 @@ void sample_processor_loop(void) {
     }
 }
 
-void Application_Loop(void) {
-    sample_processor_loop();
-}
-
 void Application_Init(void){
     mfcc_setup();
     HAL_TIM_Base_Start_IT(&htim2);
 
     while(1) {
-        Application_Loop();
+        sample_processor_loop();
     }
 }
 char createPreprocessedAudio = 0;
 
-void Application_Preprocess() {
-    static int currPos = 0;
-    const int framesToSkipp = PREPROCESSING_BUFFER_SIZE / 2;
-    static int framesAlreadySkipped = 0;
-
-    // skip to remove the click of the button
-    if(framesAlreadySkipped <= framesToSkipp) {framesAlreadySkipped++; return;}
-
-    //signal start of processing
-    vAppBoard_LEDs_LEDOn(2);
-
-
-    static float rawWave[PREPROCESSING_BUFFER_SIZE];
-
-    if(currPos < PREPROCESSING_BUFFER_SIZE) {
-        rawWave[currPos] = f32AppBoard_ADC_ReadMicro();
-        currPos++;
-        return;
-    }
-    //reset local vars
-    framesAlreadySkipped = 0;
-    currPos = 0;
-    createPreprocessedAudio = 0;
-
-    // make MFCCs from wave
-    const int mfcc_len = PREPROCESSING_BUFFER_SIZE / HOP_LEN - 2;
-
-    float mfccOutput[mfcc_len][NUM_DCT_OUTPUTS];
-
-    for(int currentFrame = 0; currentFrame < mfcc_len; currentFrame++) {
-        process_frame(mfccOutput[currentFrame], rawWave + HOP_LEN * currentFrame);
-    }
-
-    // check if more than one speech
-    int longestLength = 0;
-    int longestLengthIndex = 0;
-    for(int currentFrame = 0; currentFrame < mfcc_len - speechCountThreshold; currentFrame++) {
-        int startInterval = 0, endInterval = 0;
-        if(mfcc_find_speech_interval(
-            0,
-            mfcc_len - currentFrame,
-            (float(*)[13])&mfccOutput[currentFrame][0],
-            1,
-            &startInterval,
-            &endInterval)) {
-
-            if(longestLength < endInterval - startInterval) {
-                longestLength = endInterval - startInterval;
-                longestLengthIndex = currentFrame + startInterval;
-                currentFrame = endInterval - 1;
-            }
-        }
-    }
-
-    if(longestLength) {
-        printf("longest length: %d @ %d\n", longestLength, longestLengthIndex);
-        PrintFloatArray(longestLength,
-            NUM_DCT_OUTPUTS,
-            mfccOutput[longestLengthIndex], "const float mfcc_XXX", 0);
-    }else {
-        printf("longest length: %d - nothing found!\n", longestLength);
-    }
-
-    vAppBoard_LEDs_LEDOff(2);
-}
-
 void Application_Timer2_Handler(void){
-
-    if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_CENTER)) {
-        createPreprocessedAudio = 1;
-    }
     //flush out processing buffer
-    else if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_UP)) {
+    if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_UP)) {
         vAppBoard_LEDs_LEDOn(2);
         PrintFloatArray(mfcc_speech_window_size, NUM_DCT_OUTPUTS, mfcc_speech_window, "const float mfcc_", 0);
         vAppBoard_LEDs_LEDOff(2);
     }
 
-    if(createPreprocessedAudio) {
-        Application_Preprocess();
-    }else {
-        samples_timer_handler();
-    }
+    samples_timer_handler();
 }
