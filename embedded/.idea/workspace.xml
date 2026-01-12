@@ -23,10 +23,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="changed to 512 length">
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="best tables yet!">
+      <change afterPath="$PROJECT_DIR$/Application/inc/gui.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/gui.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Application.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/Application.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/mfccdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfccdata.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/Application.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/mfccdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/mfccdata.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1040,6 +1044,7 @@
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc/mfcc_tabels.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc/mfcc_tabels.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc/mfcc_tabels.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/src/Application.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
@@ -1109,6 +1114,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Application/inc" />
+      <recent name="$PROJECT_DIR$/Application/src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -1131,7 +1142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
       <workItem from="1768033792589" duration="24873000" />
-      <workItem from="1768130727079" duration="45491000" />
+      <workItem from="1768130727079" duration="45727000" />
     </task>
     <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
       <option name="closed" value="true" />
@@ -1237,7 +1248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768240273341</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="best tables yet!">
+      <option name="closed" value="true" />
+      <created>1768248012421</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768248012421</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1257,6 +1276,7 @@
     <MESSAGE value="lowered the sample rate" />
     <MESSAGE value="better tabels" />
     <MESSAGE value="changed to 512 length" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed to 512 length" />
+    <MESSAGE value="best tables yet!" />
+    <option name="LAST_COMMIT_MESSAGE" value="best tables yet!" />
   </component>
 </project>
