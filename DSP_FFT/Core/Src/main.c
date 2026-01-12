@@ -22,7 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-#include "arm_math.h"
 #include "stm32f429i_discovery_lcd.h"
 /* USER CODE END Includes */
 

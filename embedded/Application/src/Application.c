@@ -11,6 +11,8 @@
 #include "arm_math.h"
 #include "arm_const_structs.h"
 #include "mfcc_tabels.h"
+#include "gui.h"
+
 #include <stdio.h>
 
 #define PREPROCESSING_BUFFER_SIZE  16000
@@ -20,6 +22,7 @@ float samples[MFCC_FFT_LEN];
 
 extern TIM_HandleTypeDef htim2;
 extern UART_HandleTypeDef huart1;
+extern gui_info_t gui_info;
 
 arm_mfcc_instance_f32 mfccInstance;
 float mfccTmp[MFCC_FFT_LEN * 2];
@@ -140,7 +143,7 @@ void samples_timer_handler(void) {
 
     // exec mfcc code copied what it needed
     if (!samplesReady) {
-        //if(skippedSamples) {printf("skippedSamples: %d\n", skippedSamples); skippedSamples = 0;}
+        if(skippedSamples) {printf("skippedSamples: %d\n", skippedSamples); skippedSamples = 0;}
         samples[samplesWritePos] = f32AppBoard_ADC_ReadMicro();
         samplesWritePos = (samplesWritePos + 1) % MFCC_FFT_LEN;
         amountReady++;
@@ -173,6 +176,9 @@ void init_noise_floor(void) {
 
     noiseFloor = mean + stdDiff * 4;
     printf("Noise floor = %f - (mean: %f, std_diff: %f)\n", noiseFloor, mean, stdDiff);
+
+    snprintf(gui_info.noise_floor, GUI_STR_LEN, "%f", noiseFloor);
+    gui_info.refresh = 1;
 }
 float distance_matrix[MFCC_BUFFER_SIZE][MFCC_BUFFER_SIZE];
 float distance_buffer[MFCC_BUFFER_SIZE][MFCC_BUFFER_SIZE];
@@ -241,10 +247,31 @@ void process_speech_interval(const int start, const int count) {
         printf("Current lowest distance: %f - nothing found - %d\n", currentLowestDist, mfcc_curr.word);
         mfcc_curr.word = WORD_NOISE;
     }
+
+    snprintf(gui_info.distance, GUI_STR_LEN, "%f", currentLowestDist);
+    switch (mfcc_curr.word){
+        case WORD_START:
+            snprintf(gui_info.word, GUI_STR_LEN, "START");
+            break;
+        case WORD_STOP:
+            snprintf(gui_info.word, GUI_STR_LEN, "STOP");
+            break;
+        case WORD_PLUS:
+            snprintf(gui_info.word, GUI_STR_LEN, "PLUS");
+            break;
+        case WORD_MINUS:
+            snprintf(gui_info.word, GUI_STR_LEN, "MINUS");
+            break;
+        default:
+            snprintf(gui_info.word, GUI_STR_LEN, "?");
+            break;
+
+    }
+
+    gui_info.refresh = 1;
     vAppBoard_LEDs_LEDOff(3 + wordLast);
     vAppBoard_LEDs_LEDOn(3 + mfcc_curr.word);
     wordLast = mfcc_curr.word;
-
 }
 
 char mfcc_find_speech_interval(
@@ -374,11 +401,15 @@ void sample_processor_loop(void) {
 }
 
 void Application_Init(void){
-    mfcc_setup();
     HAL_TIM_Base_Start_IT(&htim2);
+    mfcc_setup();
+    gui_init();
+
+
 
     while(1) {
         sample_processor_loop();
+        gui_update();
     }
 }
 char createPreprocessedAudio = 0;
@@ -387,6 +418,8 @@ void Application_Timer2_Handler(void){
     //flush out processing buffer
     if(eAppBoard_Buttons_IsButtonPressed(APPBOARD_BUTTON_CENTER)) {
         vAppBoard_LEDs_LEDOn(2);
+        snprintf(gui_info.word, GUI_STR_LEN, "FLUSHED");
+        gui_info.refresh = 1;
         PrintFloatArray(mfcc_speech_window_size, NUM_DCT_OUTPUTS, mfcc_speech_window, "const float mfcc_", 0);
         vAppBoard_LEDs_LEDOff(2);
     }

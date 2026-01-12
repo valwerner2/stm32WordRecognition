@@ -23,14 +23,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="best tables yet!">
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="utilities added">
       <change afterPath="$PROJECT_DIR$/Application/inc/gui.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/Globals.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/src/gui.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DSP_FFT/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../DSP_FFT/Core/Src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/Application.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/mfccdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfccdata.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/Application.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/mfccdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/mfccdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/Application.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/ltdc.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/ltdc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedded.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/embedded.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1045,6 +1047,7 @@
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc/mfcc_tabels.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc/mfcc_tabels.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/src/Application.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Application/src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
@@ -1053,6 +1056,7 @@
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/Application.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/stm32f4xx_it.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/valwe/Desktop/stm32WordRecognition/embedded/Src/tim.c" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PlatformioLocalSettings">
     <option name="availableProjects">
@@ -1105,6 +1109,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/valwe/Desktop/stm32WordRecognition/embedded/Application/inc",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -1115,9 +1120,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Application/inc" />
+      <recent name="$PROJECT_DIR$/Drivers" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Application/src" />
+      <recent name="$PROJECT_DIR$/Application/inc" />
     </key>
   </component>
   <component name="RunManager">
@@ -1142,7 +1152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
       <workItem from="1768033792589" duration="24873000" />
-      <workItem from="1768130727079" duration="45727000" />
+      <workItem from="1768130727079" duration="52608000" />
     </task>
     <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
       <option name="closed" value="true" />
@@ -1256,7 +1266,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768248012421</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="moved">
+      <option name="closed" value="true" />
+      <created>1768248243291</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1768248243291</updated>
+    </task>
+    <task id="LOCAL-00016" summary="utilities added">
+      <option name="closed" value="true" />
+      <created>1768250264777</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1768250264777</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1277,6 +1303,8 @@
     <MESSAGE value="better tabels" />
     <MESSAGE value="changed to 512 length" />
     <MESSAGE value="best tables yet!" />
-    <option name="LAST_COMMIT_MESSAGE" value="best tables yet!" />
+    <MESSAGE value="moved" />
+    <MESSAGE value="utilities added" />
+    <option name="LAST_COMMIT_MESSAGE" value="utilities added" />
   </component>
 </project>
