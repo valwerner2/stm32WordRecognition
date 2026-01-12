@@ -23,12 +23,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="higher clock speed">
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="lowered the sample rate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Application.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedded.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/embedded.ioc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../prototype/proto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../prototype/proto.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1087,7 +1085,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
       <workItem from="1768033792589" duration="24873000" />
-      <workItem from="1768130727079" duration="29578000" />
+      <workItem from="1768130727079" duration="36451000" />
     </task>
     <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
       <option name="closed" value="true" />
@@ -1169,7 +1167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768158915288</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="lowered the sample rate">
+      <option name="closed" value="true" />
+      <created>1768215311709</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768215311709</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1186,7 +1192,8 @@
     <MESSAGE value="preprocessing changed" />
     <MESSAGE value="better tables" />
     <MESSAGE value="higher clock speed" />
-    <option name="LAST_COMMIT_MESSAGE" value="higher clock speed" />
+    <MESSAGE value="lowered the sample rate" />
+    <option name="LAST_COMMIT_MESSAGE" value="lowered the sample rate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1200,21 +1207,6 @@
           <url>file://$PROJECT_DIR$/Src/stm32f4xx_it.c</url>
           <line>96</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/Application.c</url>
-          <line>99</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/Application.c</url>
-          <line>168</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/Application.c</url>
-          <line>324</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

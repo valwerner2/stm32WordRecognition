@@ -219,10 +219,10 @@ void process_speech_interval(const int start, const int count) {
         }
     }
     static word_t wordLast = WORD_START;
-    if(currentLowestDist < 0.07f) {
+    if(currentLowestDist < 0.065f) {
         printf("Current lowest distance: %f - %d\n", currentLowestDist, mfcc_curr.word);
     }else {
-        printf("Current lowest distance: %f - nothing found\n", currentLowestDist);
+        printf("Current lowest distance: %f - nothing found - %d\n", currentLowestDist, mfcc_curr.word);
         mfcc_curr.word = WORD_NOISE;
     }
     vAppBoard_LEDs_LEDOff(3 + wordLast);
