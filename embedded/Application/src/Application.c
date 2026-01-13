@@ -94,11 +94,11 @@ void mfcc_setup(void) {
             &mfccInstance,
             NUM_MELS,
             NUM_DCT_OUTPUTS,
-            mfcc_dct_coefs_dct_embedded_f32,
-            mfcc_filter_pos_mel_embedded_f32,
-            mfcc_filter_len_mel_embedded_f32,
-            mfcc_filter_coefs_mel_embedded_f32,
-            mfcc_window_coefs_window_embedded_f32
+            mfcc_dct_coefs_dct_embedded_f32_1024,
+            mfcc_filter_pos_mel_embedded_f32_1024,
+            mfcc_filter_len_mel_embedded_f32_1024,
+            mfcc_filter_coefs_mel_embedded_f32_1024,
+            mfcc_window_coefs_window_embedded_f32_1024
         );
     }
 

@@ -1,20 +1,39 @@
 dct:
+  dct_embedded_f32_1024:
+    melFilters: 40
+    dctOutputs: 13
+    type: "f32"
+
   dct_embedded_f32_512:
     melFilters: 40
     dctOutputs: 13
     type: "f32"
   
 melfilter:
+  mel_embedded_f32_1024:
+    fftlength: 1024
+    fmin: 64
+    fmax: 8000
+    samplingRate: 16000
+    melFilters: 40
+    type: "f32"
+
   mel_embedded_f32_512:
     fftlength: 512
     fmin: 64 
-    fmax: 6250
-    samplingRate : 12500
+    fmax: 8000
+    samplingRate : 16000
     melFilters: 40
     type: "f32"
 
 window:
+  window_embedded_f32_1024:
+    fftlength: 1024
+    type: "f32"
+    win: "hamming"
+
   window_embedded_f32_512:
     fftlength: 512
     type: "f32"  
     win: "hamming"
+
