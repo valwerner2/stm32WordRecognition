@@ -23,16 +23,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="utilities added">
-      <change afterPath="$PROJECT_DIR$/Application/inc/gui.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/src/Globals.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/src/gui.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DSP_FFT/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../DSP_FFT/Core/Src/main.c" afterDir="false" />
+    <list default="true" id="4b733799-06bb-488b-8d68-d4d623b1f6cf" name="Changes" comment="gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" beforeDir="false" afterPath="$PROJECT_DIR$/Application/inc/mfcc_tabels.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/Application.c" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/Application.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/ltdc.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/ltdc.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedded.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/embedded.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1152,7 +1146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768033791516</updated>
       <workItem from="1768033792589" duration="24873000" />
-      <workItem from="1768130727079" duration="52608000" />
+      <workItem from="1768130727079" duration="56386000" />
     </task>
     <task id="LOCAL-00001" summary="testin cosine dist instead of dtw: no luck">
       <option name="closed" value="true" />
@@ -1282,7 +1276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768250264777</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="gui">
+      <option name="closed" value="true" />
+      <created>1768256247995</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1768256247995</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1305,6 +1307,7 @@
     <MESSAGE value="best tables yet!" />
     <MESSAGE value="moved" />
     <MESSAGE value="utilities added" />
-    <option name="LAST_COMMIT_MESSAGE" value="utilities added" />
+    <MESSAGE value="gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="gui" />
   </component>
 </project>

@@ -143,7 +143,7 @@ void samples_timer_handler(void) {
 
     // exec mfcc code copied what it needed
     if (!samplesReady) {
-        if(skippedSamples) {printf("skippedSamples: %d\n", skippedSamples); skippedSamples = 0;}
+        //if(skippedSamples) {printf("skippedSamples: %d\n", skippedSamples); skippedSamples = 0;}
         samples[samplesWritePos] = f32AppBoard_ADC_ReadMicro();
         samplesWritePos = (samplesWritePos + 1) % MFCC_FFT_LEN;
         amountReady++;
