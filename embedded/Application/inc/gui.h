@@ -7,8 +7,8 @@
 
 #define GUI_STR_LEN 16
 
-void gui_init();
-void gui_update();
+void Gui_Init();
+void Gui_Update();
 
 
 typedef struct {

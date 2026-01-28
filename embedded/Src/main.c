@@ -32,7 +32,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Application.h"
+#include "application.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,6 +112,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   Application_Init();
+  Application_Start();
   /* USER CODE END 2 */
 
   /* Infinite loop */

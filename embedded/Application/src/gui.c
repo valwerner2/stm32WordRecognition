@@ -9,7 +9,7 @@
 
 extern gui_info_t gui_info;
 
-void gui_init(){
+void Gui_Init(){
 
     gui_info.refresh = 0;
     snprintf(gui_info.noise_floor, GUI_STR_LEN, "...");
@@ -21,11 +21,11 @@ void gui_init(){
     BSP_LCD_LayerDefaultInit(LCD_FOREGROUND_LAYER,LCD_FRAME_BUFFER);
     BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);
     BSP_LCD_DisplayOn();
-    gui_update();
+    Gui_Update();
     gui_info.refresh = 0;
 }
 
-void gui_update(){
+void Gui_Update(){
     if(!gui_info.refresh){return;}
 
     gui_info.refresh = 0;

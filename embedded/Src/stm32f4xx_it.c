@@ -25,7 +25,7 @@
 #include <AppBoard_LEDs.h>
 #include <stdio.h>
 
-#include "Application.h"
+#include "application.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

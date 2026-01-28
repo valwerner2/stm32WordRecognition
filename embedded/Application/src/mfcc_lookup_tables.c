@@ -1,4 +1,4 @@
-#include "mfccdata.h"
+#include "mfcc_lookup_tables.h"
 
 
 const float32_t mfcc_dct_coefs_dct_embedded_f32_1024[NB_MFCC_DCT_COEFS_DCT_EMBEDDED_F32_1024]={

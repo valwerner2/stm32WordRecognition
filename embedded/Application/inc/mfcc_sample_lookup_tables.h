@@ -5,23 +5,9 @@
 #ifndef MFCC_TABELS_H
 #define MFCC_TABELS_H
 
-#include "Application.h"
+#include "mfcc.h"
 
 #define NUM_MFCC_COMPARISON 16
-
-typedef enum word{
-  WORD_START = 0,
-  WORD_STOP,
-  WORD_PLUS,
-  WORD_MINUS,
-  WORD_NOISE
-}word_t;
-
-typedef struct{
-  int rows;
-  word_t word;
-  const float *data;
-}mfcc_t;
 
 const float mfcc_start0[19][13] = {
   {0.000000f, -4.029883f, -0.560590f, 0.147484f, 0.194152f, -0.437424f, 0.191791f, -0.227509f, -0.676920f, -0.122889f, 0.093963f, -0.004060f, -0.633306f},
